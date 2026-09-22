@@ -21,7 +21,7 @@ payload จะหน้าตาประมาณนี้
 ถ้าใช้ curl ส่งก็จะเป็น
 
 `
-curl -i http://amiable-citadel.picoctf.net:57852/login \
+> curl -i http://amiable-citadel.picoctf.net:57852/login \
 > -X POST \
 > -H "Content-Type:application/json" \
 > -H "X-Forwarded-For:127.0.0.1" \
