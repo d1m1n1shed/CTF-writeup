@@ -10,4 +10,11 @@ Concepts:
 2. กดส่งและใส่ XFF Header โดยใช้ BurpSuite (เขียนว่า X-Forwarded-For: 8.8.8.8)
 3. ทำซ้ำจนครบ
 
-แต่ไฟล์มันมี Passwords ตั้งเยอะ ดังนั้นเราจะมาทำให้มันส่งเป็น Automation กัน
+แต่ไฟล์มันมี Passwords ตั้งเยอะ ดังนั้นเราจะมาทำให้มันส่งเป็น Automation กัน เราจะใช้ tool ของ linux ชื่อ ffuf คือโปรแกรมการ fuzzing 
+# fuzzing 
+คือการทดสอบข้อมูลโดยส่งข้อมูลแบบสุ่มหลายๆ โดยข้อมูลอันนี้จะเป็น passwords นั่นเอง
+
+payload จะหน้าตาประมาณนี้
+<img width="454" height="75" alt="image" src="https://github.com/user-attachments/assets/f26f4b56-2550-4734-bc10-069c617f372b" />
+
+
