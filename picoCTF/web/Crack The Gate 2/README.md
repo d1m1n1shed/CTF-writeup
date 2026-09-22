@@ -27,4 +27,5 @@ payload จะหน้าตาประมาณนี้
 > -H "X-Forwarded-For:127.0.0.1" \
 > -d '{"email": "ctf-player@picoctf.org", "password": "test"}'
 
-`นะจ๊ะ`
+`git clone`
+`git commit`
